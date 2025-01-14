@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { CiEdit } from "react-icons/ci";
 import Cookies from "js-cookie";
 import { GoCodeReview } from "react-icons/go";
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Dashboard = () => {
   const [transaction, setTransaction] = useState([]);
@@ -19,8 +19,8 @@ const Dashboard = () => {
   const [Pigmyresult, setpigmyResult] = useState(false);
   const [loading, setLoading] = useState(false);
   const [selectedvalue, setselectedvalue] = useState("id");
-  const [startDate,setStartDate] = useState(new Date());
-  const [endDate,setEndDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
 
   const [offset, setOffset] = useState(0);
   const [user, setUser] = useState({
@@ -54,15 +54,12 @@ const Dashboard = () => {
     setLoading(true);
 
     axios
-      .get(
-        "https://unioncooperativesocietylimited.in:8443/transaction/findByAgentIdAndDate",
-        {
-          params: {
-            agentId: searchId,
-            localDate: selectdate,
-          },
-        }
-      )
+      .get("https://pigmy.uur.co.in:8443/transaction/findByAgentIdAndDate", {
+        params: {
+          agentId: searchId,
+          localDate: selectdate,
+        },
+      })
       .then((response) => {
         console.log(response.data.data);
         setidResult(response.data.data);
@@ -87,7 +84,7 @@ const Dashboard = () => {
 
     axios
       .get(
-        `https://unioncooperativesocietylimited.in:8443/transaction/getCustomersWithNoTransactionsToday/${"DAILY_DEPOSIT"}/${localdate}`
+        `https://pigmy.uur.co.in:8443/transaction/getCustomersWithNoTransactionsToday/${"DAILY_DEPOSIT"}/${localdate}`
       )
       .then((response) => {
         console.log(response.data);
@@ -111,11 +108,11 @@ const Dashboard = () => {
   const GetAlltransaction = () => {
     axios
       .get(
-        `https://unioncooperativesocietylimited.in:8443/transaction/getAllTransactions/${currentpage}/${recordsperpages}/${field}`
+        `https://pigmy.uur.co.in:8443/transaction/getAllTransactions/${currentpage}/${recordsperpages}/${field}`
       )
       .then((response) => {
         // console.log(response)
-        console.log("Res",response.data.data)
+        console.log("Res", response.data.data);
 
         setTransaction(response.data.data.content);
         setOffset(response.data.data.totalPages);
@@ -141,31 +138,35 @@ const Dashboard = () => {
 
   // const alldata =localdate ? Pigmyresult : Iddata
 
-  const generateCSV = async() => {
-      try {
+  const generateCSV = async () => {
+    try {
+      const sd = `${startDate?.getFullYear()}-${(startDate.getMonth() + 1)
+        .toString()
+        .padStart(2, "0")}-${startDate.getDate().toString().padStart(2, "0")}`;
+      const ed = `${endDate?.getFullYear()}-${(endDate.getMonth() + 1)
+        .toString()
+        .padStart(2, "0")}-${endDate.getDate().toString().padStart(2, "0")}`;
+      const response = await axios.get(
+        `https://pigmy.uur.co.in:8443/transaction/generateCsvForDailyDeposit/${sd}/${ed}`
+      );
 
-        const sd = `${startDate?.getFullYear()}-${(startDate.getMonth() + 1).toString().padStart(2, "0")}-${startDate.getDate().toString().padStart(2, "0")}`
-        const ed = `${endDate?.getFullYear()}-${(endDate.getMonth() + 1).toString().padStart(2, "0")}-${endDate.getDate().toString().padStart(2, "0")}`
-        const response = await axios.get(`https://unioncooperativesocietylimited.in:8443/transaction/generateCsvForDailyDeposit/${sd}/${ed}`)
+      const csvData = response.data;
 
-        const csvData = response.data;
+      // Create a Blob containing the CSV data
+      const blob = new Blob([csvData], { type: "text/csv" });
 
+      // Create a download link
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = `transaction_DailyDeposit_${sd}_${ed}`;
+      link.click();
 
-        // Create a Blob containing the CSV data
-        const blob = new Blob([csvData], { type: 'text/csv' });
-
-        // Create a download link
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = `transaction_DailyDeposit_${sd}_${ed}`;
-        link.click();
-
-        // Clean up
-        URL.revokeObjectURL(link.href);
-      } catch (error) {
-        console.log(error);
-      }
-  }
+      // Clean up
+      URL.revokeObjectURL(link.href);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div>
@@ -176,13 +177,15 @@ const Dashboard = () => {
           <div className="row">
             <h1
               className="mt-3 fw-bold"
-              style={{ textAlign: "center", fontFamily: "serif",color:'#EB5A3C' }}
+              style={{
+                textAlign: "center",
+                fontFamily: "serif",
+                color: "#EB5A3C",
+              }}
             >
               {" "}
               Daily Deposit
             </h1>
-
-            
 
             <div
               className="container-fluid"
@@ -208,7 +211,11 @@ const Dashboard = () => {
               <p>
                 <button
                   className="btn "
-                  style={{ marginLeft: "5px",background:'#EB5A3C',color:'white' }}
+                  style={{
+                    marginLeft: "5px",
+                    background: "#EB5A3C",
+                    color: "white",
+                  }}
                   onClick={searchCustomers}
                 >
                   Search
@@ -236,7 +243,11 @@ const Dashboard = () => {
               <p>
                 <button
                   className="btn  "
-                  style={{ marginLeft: "5px", background:'#EB5A3C',color:'white' }}
+                  style={{
+                    marginLeft: "5px",
+                    background: "#EB5A3C",
+                    color: "white",
+                  }}
                   onClick={No_withdrawal}
                 >
                   Search
@@ -251,17 +262,29 @@ const Dashboard = () => {
               <p style={{ marginRight: "10px", marginTop: "10px" }}>
                 Start Date
               </p>
-              <DatePicker className='border border-light p-2 rounded-lg' selected={startDate} onChange={(startDate) => setStartDate(startDate)} dateFormat="dd/MM/yy"/>
+              <DatePicker
+                className="border border-light p-2 rounded-lg"
+                selected={startDate}
+                onChange={(startDate) => setStartDate(startDate)}
+                dateFormat="dd/MM/yy"
+              />
 
-              <p style={{ marginRight: "10px", marginTop: "10px" }}>
-                End Date
-              </p>
-              <DatePicker className='border border-light p-2 rounded-lg' selected={endDate} onChange={(startDate) => setEndDate(startDate)} dateFormat="dd/MM/yy"/>
+              <p style={{ marginRight: "10px", marginTop: "10px" }}>End Date</p>
+              <DatePicker
+                className="border border-light p-2 rounded-lg"
+                selected={endDate}
+                onChange={(startDate) => setEndDate(startDate)}
+                dateFormat="dd/MM/yy"
+              />
 
               <p>
                 <button
                   className="btn  "
-                  style={{ marginLeft: "5px", background:'#EB5A3C',color:'white' }}
+                  style={{
+                    marginLeft: "5px",
+                    background: "#EB5A3C",
+                    color: "white",
+                  }}
                   onClick={() => generateCSV()}
                 >
                   Generate CSV
@@ -309,14 +332,17 @@ const Dashboard = () => {
                               <td style={{ fontSize: "20px" }}>
                                 {
                                   val.customerAccount.find(
-                                    (account) => account.accountType === "DAILY_DEPOSIT"
+                                    (account) =>
+                                      account.accountType === "DAILY_DEPOSIT"
                                   )?.accountNumber
                                 }
                               </td>
                               <td style={{ fontSize: "20px" }}>
                                 {val.agentId}
                               </td>
-                              <td style={{ fontSize: "20px" }}>DAILY DEPOSIT</td>
+                              <td style={{ fontSize: "20px" }}>
+                                DAILY DEPOSIT
+                              </td>
                               <td style={{ fontSize: "20px" }}>{localdate}</td>
                               <td style={{ fontSize: "20px" }}>NA</td>
                               {/* <td style={{ fontSize: '18px' }}><Link style={{ textDecoration: 'none' }} to={`/viewcustomer/${val.id}`}><p style={{ backgroundColor: 'orange', color: 'white', textAlign: 'center' }}>View</p></Link></td> */}
@@ -344,24 +370,28 @@ const Dashboard = () => {
                                 {val.localDateTime}
                               </td>
                               <td style={{ fontSize: "20px" }}>{val.amount}</td>
-                              <td style={{ fontSize: "18px",display :'flex' }}>
+                              <td style={{ fontSize: "18px", display: "flex" }}>
                                 <Link
-                                  style={{ textDecoration: "none", color:'#EB5A3C' }}
+                                  style={{
+                                    textDecoration: "none",
+                                    color: "#EB5A3C",
+                                  }}
                                   to={`/viewcustomer/${val.id}`}
                                 >
                                   <p>
-                                  <GoCodeReview />
+                                    <GoCodeReview />
                                   </p>
                                 </Link>
                                 {user.role === "SUPERADMIN" && (
                                   <Link
                                     to={`/pigmyedit1.2.3.01/${val.id}`}
-                                    style={{ textDecoration: "none" ,marginLeft:'25%'}}
+                                    style={{
+                                      textDecoration: "none",
+                                      marginLeft: "25%",
+                                    }}
                                   >
-                                    <p
-                                      
-                                    >
-                                       <CiEdit />
+                                    <p>
+                                      <CiEdit />
                                     </p>
                                   </Link>
                                 )}

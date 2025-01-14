@@ -57,10 +57,7 @@ const Addcustomer = () => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post(
-        "https://unioncooperativesocietylimited.in:8443/customer/save",
-        customervalue
-      )
+      .post("https://pigmy.uur.co.in:8443/customer/save", customervalue)
       .then((response) => {
         console.log(response.data.data);
         const custId = response.data.data?.id;
@@ -87,7 +84,7 @@ const Addcustomer = () => {
 
   const getagentid = () => {
     axios
-      .get("https://unioncooperativesocietylimited.in:8443/agent/getAllAgents")
+      .get("https://pigmy.uur.co.in:8443/agent/getAllAgents")
       .then((response) => {
         console.log(response.data.data);
         setgetagentId(response.data.data);
@@ -532,7 +529,11 @@ const Addcustomer = () => {
                   alignItems: "end",
                 }}
               >
-                <button type="submit" className="btn btn-success"style={{ backgroundColor:"#EB5A3C"}}>
+                <button
+                  type="submit"
+                  className="btn btn-success"
+                  style={{ backgroundColor: "#EB5A3C" }}
+                >
                   Save
                 </button>
               </div>

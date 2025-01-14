@@ -22,7 +22,7 @@ const ViewAccount = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://unioncooperativesocietylimited.in:8443/customer/id/${id}`)
+      .get(`https://pigmy.uur.co.in:8443/customer/id/${id}`)
       .then((result) => {
         console.log(result.data.data);
         setEditData(result.data.data);
@@ -37,20 +37,23 @@ const ViewAccount = () => {
 
   const handleSave = async () => {
     try {
-      const res = await axios.post(`${BASE_URL}/accounts/updateCustomerAccountNo`,{
-        "accountNumber": accNo,
-        "id": updateAcc.id
-      })
+      const res = await axios.post(
+        `${BASE_URL}/accounts/updateCustomerAccountNo`,
+        {
+          accountNumber: accNo,
+          id: updateAcc.id,
+        }
+      );
       console.log(res.data);
-      alert('Updated Successfully');
+      alert("Updated Successfully");
     } catch (error) {
       console.log(error);
-      alert('Error while updating');
-    }finally{
+      alert("Error while updating");
+    } finally {
       handleClose();
       window.location.reload();
     }
-  }
+  };
 
   return (
     <div className="container-fluid">

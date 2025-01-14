@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Loader from "./Loader";
 import axios from "axios";
-import { useNavigate,useParams  } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 // import { useParams } from "react-router-dom";
 
 const EditAmountPigmy = () => {
@@ -13,7 +13,7 @@ const EditAmountPigmy = () => {
 
   const navigate = useNavigate();
 
-  const { pigmyId } = useParams()
+  const { pigmyId } = useParams();
 
   const pigmyTypeADD = async () => {
     setLoading(true);
@@ -21,7 +21,7 @@ const EditAmountPigmy = () => {
     try {
       // Use axios.put and pass data in the request body
       const response = await axios.patch(
-        `https://unioncooperativesocietylimited.in:8443/transaction/updateTransactionToAddAmount/${pigmyId}/${amountadd}`
+        `https://pigmy.uur.co.in:8443/transaction/updateTransactionToAddAmount/${pigmyId}/${amountadd}`
       );
       console.log(response.data); // Log the response if needed
       alert("Amount Changes Success");
@@ -47,7 +47,7 @@ const EditAmountPigmy = () => {
     try {
       // Use axios.put and pass data in the request body
       const response = await axios.patch(
-        `https://unioncooperativesocietylimited.in:8443/transaction/updateTransactionToLessAmount/${pigmyId}/${amountLess}`
+        `https://pigmy.uur.co.in:8443/transaction/updateTransactionToLessAmount/${pigmyId}/${amountLess}`
       );
       console.log(response.data); // Log the response if needed
       alert("Amount Changes Success");
@@ -69,33 +69,34 @@ const EditAmountPigmy = () => {
 
   return (
     <div className="container-fluid">
-     
-        
-          <div>
-            <h2 className="mt-4 fw-bold" style={{ fontFamily: "serif", textAlign:'center',color:'#EB5A3C' }}>
-              Select Edit Of Amount
-            </h2>
-            <div style={{ display:'flex',justifyContent:'center', marginTop:'2%'}}>
-
+      <div>
+        <h2
+          className="mt-4 fw-bold"
+          style={{ fontFamily: "serif", textAlign: "center", color: "#EB5A3C" }}
+        >
+          Select Edit Of Amount
+        </h2>
+        <div
+          style={{ display: "flex", justifyContent: "center", marginTop: "2%" }}
+        >
           <div>
             <select
               value={Account}
               className="form-control"
               onChange={(e) => setAccount(e.target.value)}
-              style={{ display :'flex', justifyContent:'center', alignContent:'center'}}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignContent: "center",
+              }}
             >
               <option value="">Select Type of Amount</option>
               <option value="Add">Add Amount</option>
               <option value="Less">Less Amount</option>
             </select>
 
-            {
-               Account === 'Add' && (
-
-                <div
-                className="mt-2"
-                style={{ alignItems: "center"}}
-              >
+            {Account === "Add" && (
+              <div className="mt-2" style={{ alignItems: "center" }}>
                 <tr>
                   <p>
                     <th>Enter Amount</th>
@@ -108,7 +109,7 @@ const EditAmountPigmy = () => {
                   </p>
                 </tr>
                 <div>{loading && <Loader width={30} height={30} />}</div>
-  
+
                 <div>
                   <input
                     onClick={pigmyTypeADD}
@@ -119,52 +120,37 @@ const EditAmountPigmy = () => {
                   />
                 </div>
               </div>
-               )
-            }
+            )}
 
-
-            {
-                Account === 'Less' && (
-
-                    <div
-              className="mt-2"
-              style={{ alignItems: "center"}}
-            >
-              <tr>
-                <p>
-                  <th>Enter Amount</th>
+            {Account === "Less" && (
+              <div className="mt-2" style={{ alignItems: "center" }}>
+                <tr>
+                  <p>
+                    <th>Enter Amount</th>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={amountLess}
+                      onChange={(e) => setamountLess(e.target.value)}
+                    />
+                  </p>
+                </tr>
+                <div>{loading1 && <Loader width={30} height={30} />}</div>
+                <div>
                   <input
-                    type="text"
-                    className="form-control"
-                    value={amountLess}
-                    onChange={(e) => setamountLess(e.target.value)}
+                    onClick={pigmyTypeLESS}
+                    style={{ backgroundColor: "#010042" }}
+                    className="btn btn-dark mt-3"
+                    type="submit"
+                    value="Less Amount"
                   />
-                </p>
-              </tr>
-              <div>{loading1 && <Loader width={30} height={30} />}</div>
-              <div>
-                <input
-                  onClick={pigmyTypeLESS}
-                  style={{ backgroundColor: "#010042" }}
-                  className="btn btn-dark mt-3"
-                  type="submit"
-                  value="Less Amount"
-                />
+                </div>
               </div>
-            </div>
-
-                )
-            }
-
-            
-          </div>
+            )}
           </div>
         </div>
-        </div>
-
-        
-          
-      
+      </div>
+    </div>
   );
 };
 

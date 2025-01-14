@@ -34,7 +34,7 @@ const Cutomerbankaccount = () => {
     e.preventDefault();
     setLoading(true);
 
-    const url = `https://unioncooperativesocietylimited.in:8443/customer/addAccount`;
+    const url = `https://pigmy.uur.co.in:8443/customer/addAccount`;
 
     try {
       const response = await axios.post(url, data);

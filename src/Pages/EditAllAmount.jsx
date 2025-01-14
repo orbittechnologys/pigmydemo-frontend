@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import Loader from "./Loader";
 import axios from "axios";
-import { useNavigate , useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const EditAllAmount = () => {
-    const [amountadd, setamountadd] = useState(null);
-    const [amountLess, setamountLess] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [loading1, setLoading1] = useState(false);
-    const [Account, setAccount] = useState(null);
+  const [amountadd, setamountadd] = useState(null);
+  const [amountLess, setamountLess] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [loading1, setLoading1] = useState(false);
+  const [Account, setAccount] = useState(null);
 
   const navigate = useNavigate();
-  const { pigmyId } = useParams()
+  const { pigmyId } = useParams();
 
   const AllTypeADD = async () => {
     setLoading(true);
     try {
       // Use axios.put and pass data in the request body
       const response = await axios.patch(
-        `https://unioncooperativesocietylimited.in:8443/transaction/updateAllTransactionToAddAmount/${pigmyId}/${amountadd}`
+        `https://pigmy.uur.co.in:8443/transaction/updateAllTransactionToAddAmount/${pigmyId}/${amountadd}`
       );
       console.log(response.data); // Log the response if needed
       alert("Amount Changes Success");
@@ -43,7 +43,7 @@ const EditAllAmount = () => {
     try {
       // Use axios.put and pass data in the request body
       const response = await axios.patch(
-        `https://unioncooperativesocietylimited.in:8443/transaction/updateAllTransactionToLessAmount/${pigmyId}/${amountLess}`
+        `https://pigmy.uur.co.in:8443/transaction/updateAllTransactionToLessAmount/${pigmyId}/${amountLess}`
       );
       console.log(response.data); // Log the response if needed
       alert("Amount Changes Success");
@@ -68,7 +68,7 @@ const EditAllAmount = () => {
       <div>
         <h2
           className="mt-4 fw-bold"
-          style={{ fontFamily: "serif", textAlign: "center",color:'#EB5A3C' }}
+          style={{ fontFamily: "serif", textAlign: "center", color: "#EB5A3C" }}
         >
           Select Edit Of Amount
         </h2>

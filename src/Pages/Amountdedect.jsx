@@ -19,12 +19,10 @@ const Amountdedect = () => {
   const [isPigmy, setIsPigmy] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
-  const [ddAccount,setDDAccount] = useState(null);
+  const [ddAccount, setDDAccount] = useState(null);
   const [secAccNo, setSecAccNo] = useState(null);
 
-  const [account,setAccount] = useState(null);
-
-
+  const [account, setAccount] = useState(null);
 
   const navigate = useNavigate();
   const data = {
@@ -39,7 +37,7 @@ const Amountdedect = () => {
       console.log(data);
       // Use axios.put and pass data in the request body
       const response = await axios.put(
-        "https://unioncooperativesocietylimited.in:8443/customer/withDrawalOfAmount",
+        "https://pigmy.uur.co.in:8443/customer/withDrawalOfAmount",
         null,
         {
           params: {
@@ -72,11 +70,11 @@ const Amountdedect = () => {
       console.log(data);
       // Use axios.put and pass data in the request body
       const response = await axios.put(
-        "https://unioncooperativesocietylimited.in:8443/transaction/withdrawalOfAllAccountTypeAmount",
+        "https://pigmy.uur.co.in:8443/transaction/withdrawalOfAllAccountTypeAmount",
         null,
         {
           params: {
-            accountNumber:secAccNo,
+            accountNumber: secAccNo,
             withdrawalAmount: allamount,
           },
         }
@@ -106,7 +104,7 @@ const Amountdedect = () => {
   const getAllCustomer = () => {
     axios
       .get(
-        `https://unioncooperativesocietylimited.in:8443/customer/findCustomerByPhoneNumber/${phone}`
+        `https://pigmy.uur.co.in:8443/customer/findCustomerByPhoneNumber/${phone}`
       )
       .then((response) => {
         console.log(response.data.data.customerAccount);
@@ -126,51 +124,54 @@ const Amountdedect = () => {
       justifyContent: "center",
     },
     divHover: {
-      boxShadow:isHovered ?  'rgba(0, 0, 0, 0.35) 0px 5px 15px':'none',
-      padding: isHovered ? '0 0 6% 0' : 'none',
-      animation : isHovered ? 'easy-out 1s delay .5s':'none',
-      animation : isHovered ? ' delay .5s':'none'
+      boxShadow: isHovered ? "rgba(0, 0, 0, 0.35) 0px 5px 15px" : "none",
+      padding: isHovered ? "0 0 6% 0" : "none",
+      animation: isHovered ? "easy-out 1s delay .5s" : "none",
+      animation: isHovered ? " delay .5s" : "none",
     },
 
     divHoverPigmy: {
-      
-      padding: isPigmy ? '0 0 20% 0' : 'none',
-      boxShadow:isPigmy ?  'rgba(0, 0, 0, 0.35) 0px 5px 15px':'none',
-      animation : isPigmy ? 'easy-out 1s delay .5s':'none',
-      animation : isPigmy ? 'delay .5s':'none'
+      padding: isPigmy ? "0 0 20% 0" : "none",
+      boxShadow: isPigmy ? "rgba(0, 0, 0, 0.35) 0px 5px 15px" : "none",
+      animation: isPigmy ? "easy-out 1s delay .5s" : "none",
+      animation: isPigmy ? "delay .5s" : "none",
     },
   };
 
-  const handleDDAccountSearch = async() => {
+  const handleDDAccountSearch = async () => {
     try {
-      const res = await axios.get(`${BASE_URL}/accounts/app/fetchAccount/${ddAccNo}`);
+      const res = await axios.get(
+        `${BASE_URL}/accounts/app/fetchAccount/${ddAccNo}`
+      );
       console.log(res.data);
-      if(res.data.data.accountType != "DAILY_DEPOSIT"){
-        alert('Please enter DD account number only');
-      }else{
+      if (res.data.data.accountType != "DAILY_DEPOSIT") {
+        alert("Please enter DD account number only");
+      } else {
         setDDAccount(res.data.data);
       }
-      
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
-  const handleAccountSearch = async() => {
+  const handleAccountSearch = async () => {
     try {
-      const res = await axios.get(`${BASE_URL}/accounts/app/fetchAccount/${secAccNo}`);
+      const res = await axios.get(
+        `${BASE_URL}/accounts/app/fetchAccount/${secAccNo}`
+      );
       console.log(res.data);
-      if(res.data.data.accountType == "DAILY_DEPOSIT" || res.data.data.accountType == "LOAN"){
-        alert('Please use DD withdrawal, If entered Loan cannot withdraw Loan');
-      }else{
+      if (
+        res.data.data.accountType == "DAILY_DEPOSIT" ||
+        res.data.data.accountType == "LOAN"
+      ) {
+        alert("Please use DD withdrawal, If entered Loan cannot withdraw Loan");
+      } else {
         setAccount(res.data.data);
       }
-      
     } catch (error) {
       console.log(error);
     }
-  }
-
+  };
 
   return (
     <div
@@ -183,101 +184,92 @@ const Amountdedect = () => {
       >
         <div className="container">
           <div
-           style={isPigmy ? { ...styles.div, ...styles.divHoverPigmy } : styles.div}
-           onMouseEnter={() => setIsPigmy(true)}
-           onMouseLeave={() => setIsPigmy(false)}
-           >
+            style={
+              isPigmy ? { ...styles.div, ...styles.divHoverPigmy } : styles.div
+            }
+            onMouseEnter={() => setIsPigmy(true)}
+            onMouseLeave={() => setIsPigmy(false)}
+          >
             <div className="px-5">
-              <h3 className="mt-5 fw-bold" style={{ fontFamily: "serif",color:'#EB5A3C' }}>
-              Daily Deposit Withdrawal Amount
+              <h3
+                className="mt-5 fw-bold"
+                style={{ fontFamily: "serif", color: "#EB5A3C" }}
+              >
+                Daily Deposit Withdrawal Amount
               </h3>
 
               <div className="mt-5">
-                <tr >
-                 
-                    <th>Enter Account Number</th>
-                    <td>
+                <tr>
+                  <th>Enter Account Number</th>
+                  <td>
                     <input
                       type="text"
                       value={typephone}
-                      onChange={(e) =>
-                        setDDAccNo(e.target.value.toUpperCase())
-                      }
+                      onChange={(e) => setDDAccNo(e.target.value.toUpperCase())}
                       className="form-control"
                     />
-                    </td>
-                    
-                    <td>
-                    <button className="btn btn-success" style={{backgroundColor:'#EB5A3C'}} type="button" onClick={() => handleDDAccountSearch()}>
+                  </td>
+
+                  <td>
+                    <button
+                      className="btn btn-success"
+                      style={{ backgroundColor: "#EB5A3C" }}
+                      type="button"
+                      onClick={() => handleDDAccountSearch()}
+                    >
                       Search
                     </button>
-                    </td>
-                   
+                  </td>
                 </tr>
                 {ddAccount ? (
                   <>
-               
-                  <tr >
-                   
-                   <th>Account Number</th>
-                   <td> {ddAccount?.accountNumber} </td>
-                 
-               </tr>
-               <tr>
-                
-                   <th>Account Balance</th>
-                   <td> {ddAccount?.balance} </td>
-                 
-               </tr>
-               <tr>
-                
-                   <th>Customer ID</th>
-                   <td> {ddAccount?.customer?.id} </td>
-                 
-               </tr>
-               <tr>
-                
-                   <th>Customer Name</th>
-                   <td> {ddAccount?.customer?.customerName} </td>
-                 
-               </tr>
-               <tr>
-                
-                   <th>Customer Mobile</th>
-                   <td> {ddAccount?.customer?.phone}  </td>
-                 
-               </tr>
-                 
-                  
+                    <tr>
+                      <th>Account Number</th>
+                      <td> {ddAccount?.accountNumber} </td>
+                    </tr>
+                    <tr>
+                      <th>Account Balance</th>
+                      <td> {ddAccount?.balance} </td>
+                    </tr>
+                    <tr>
+                      <th>Customer ID</th>
+                      <td> {ddAccount?.customer?.id} </td>
+                    </tr>
+                    <tr>
+                      <th>Customer Name</th>
+                      <td> {ddAccount?.customer?.customerName} </td>
+                    </tr>
+                    <tr>
+                      <th>Customer Mobile</th>
+                      <td> {ddAccount?.customer?.phone} </td>
+                    </tr>
 
-                  <tr>
-                  <p>
-                    <th>Enter Amount</th>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={amount}
-                      onChange={(e) => setamount(e.target.value)}
-                    />
-                  </p>
-                </tr>
-                <div>
-                <input
-                  onClick={pigmyType}
-                  style={{ backgroundColor: "#010042" }}
-                  className="btn btn-dark mt-3"
-                  type="submit"
-                  value="WITHDRAW"
-                />
-              </div>
+                    <tr>
+                      <p>
+                        <th>Enter Amount</th>
+                        <input
+                          type="text"
+                          className="form-control"
+                          value={amount}
+                          onChange={(e) => setamount(e.target.value)}
+                        />
+                      </p>
+                    </tr>
+                    <div>
+                      <input
+                        onClick={pigmyType}
+                        style={{ backgroundColor: "#010042" }}
+                        className="btn btn-dark mt-3"
+                        type="submit"
+                        value="WITHDRAW"
+                      />
+                    </div>
                   </>
-                ):``
-
-                }
-
+                ) : (
+                  ``
+                )}
               </div>
               <div>{loading && <Loader width={30} height={30} />}</div>
-              
             </div>
           </div>
         </div>
@@ -289,20 +281,24 @@ const Amountdedect = () => {
       >
         <div className="container">
           <div
-           style={isPigmy ? { ...styles.div, ...styles.divHoverPigmy } : styles.div}
-           onMouseEnter={() => setIsPigmy(true)}
-           onMouseLeave={() => setIsPigmy(false)}
-           >
+            style={
+              isPigmy ? { ...styles.div, ...styles.divHoverPigmy } : styles.div
+            }
+            onMouseEnter={() => setIsPigmy(true)}
+            onMouseLeave={() => setIsPigmy(false)}
+          >
             <div className="px-5">
-              <h3 className="mt-5 fw-bold" style={{ fontFamily: "serif",color:'#EB5A3C' }}>
-               All Type Withdrawal Amount
+              <h3
+                className="mt-5 fw-bold"
+                style={{ fontFamily: "serif", color: "#EB5A3C" }}
+              >
+                All Type Withdrawal Amount
               </h3>
 
               <div className="mt-5">
-                <tr >
-                 
-                    <th>Enter Account Number</th>
-                    <td>
+                <tr>
+                  <th>Enter Account Number</th>
+                  <td>
                     <input
                       type="text"
                       value={typephone}
@@ -311,79 +307,68 @@ const Amountdedect = () => {
                       }
                       className="form-control"
                     />
-                    </td>
-                    
-                    <td>
-                    <button className="btn btn-success" style={{backgroundColor:'#EB5A3C'}} type="button" onClick={() => handleAccountSearch()}>
+                  </td>
+
+                  <td>
+                    <button
+                      className="btn btn-success"
+                      style={{ backgroundColor: "#EB5A3C" }}
+                      type="button"
+                      onClick={() => handleAccountSearch()}
+                    >
                       Search
                     </button>
-                    </td>
-                   
+                  </td>
                 </tr>
                 {account ? (
                   <>
-               
-                  <tr >
-                   
-                   <th>Account Number</th>
-                   <td> {account?.accountNumber} </td>
-                 
-               </tr>
-               <tr>
-                
-                   <th>Account Balance</th>
-                   <td> {account?.balance} </td>
-                 
-               </tr>
-               <tr>
-                
-                   <th>Customer ID</th>
-                   <td> {account?.customer?.id} </td>
-                 
-               </tr>
-               <tr>
-                
-                   <th>Customer Name</th>
-                   <td> {account?.customer?.customerName} </td>
-                 
-               </tr>
-               <tr>
-                
-                   <th>Customer Mobile</th>
-                   <td> {account?.customer?.phone}  </td>
-                 
-               </tr>
-                 
-                  
+                    <tr>
+                      <th>Account Number</th>
+                      <td> {account?.accountNumber} </td>
+                    </tr>
+                    <tr>
+                      <th>Account Balance</th>
+                      <td> {account?.balance} </td>
+                    </tr>
+                    <tr>
+                      <th>Customer ID</th>
+                      <td> {account?.customer?.id} </td>
+                    </tr>
+                    <tr>
+                      <th>Customer Name</th>
+                      <td> {account?.customer?.customerName} </td>
+                    </tr>
+                    <tr>
+                      <th>Customer Mobile</th>
+                      <td> {account?.customer?.phone} </td>
+                    </tr>
 
-                  <tr>
-                  <p>
-                    <th>Enter Amount</th>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={allamount}
-                      onChange={(e) => setallamount(e.target.value)}
-                    />
-                  </p>
-                </tr>
-                <div>
-                <input
-                  onClick={Alltypewithdrawal}
-                  style={{ backgroundColor: "#010042" }}
-                  className="btn btn-dark mt-3"
-                  type="submit"
-                  value="WITHDRAW"
-                />
-              </div>
+                    <tr>
+                      <p>
+                        <th>Enter Amount</th>
+                        <input
+                          type="text"
+                          className="form-control"
+                          value={allamount}
+                          onChange={(e) => setallamount(e.target.value)}
+                        />
+                      </p>
+                    </tr>
+                    <div>
+                      <input
+                        onClick={Alltypewithdrawal}
+                        style={{ backgroundColor: "#010042" }}
+                        className="btn btn-dark mt-3"
+                        type="submit"
+                        value="WITHDRAW"
+                      />
+                    </div>
                   </>
-                ):``
-
-                }
-
+                ) : (
+                  ``
+                )}
               </div>
               <div>{loading && <Loader width={30} height={30} />}</div>
-              
             </div>
           </div>
         </div>
