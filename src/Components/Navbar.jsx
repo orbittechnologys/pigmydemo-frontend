@@ -87,9 +87,9 @@ function Navbar() {
               {SidebarData.map((item, index) => {
                 return (
 
-                  <li key={index} style={{fontFamily:'serif'}} className={item.cName}>
+                  <li key={index} style={{fontFamily:'serif'}} id='list' className={item.cName}>
                     <Link to={item.path}>
-                      {item.icon}
+                      <span className='icon'>{item.icon}</span>
                       <span>{item.title}</span>
                     </Link>
 

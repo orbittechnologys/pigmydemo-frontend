@@ -64,7 +64,16 @@
   }
   
   .nav-text a:hover {
-    background-color: rgba(71, 108, 62, 1);
+    background-color: white;
+    color: black;
+  }
+  .icon {
+    color: black;
+  }
+
+
+  #list a:hover svg {
+    color: initial; 
   }
   
   .nav-menu-items {
