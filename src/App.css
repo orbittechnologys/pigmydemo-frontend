@@ -1,0 +1,25 @@
+.table-success {
+    --bs-table-color: #fff !important;
+    --bs-table-bg: #4F6F52 !important;
+    --bs-table-border-color: #bcd0c7;
+    --bs-table-striped-bg: #c7dbd2;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #bcd0c7;
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: #c1d6cc;
+    --bs-table-hover-color: #000;
+    color: var(--bs-table-color);
+    border-color: var(--bs-table-border-color);
+}
+
+
+/* .border{
+    width: 450px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    
+}
+.next{
+    
+   margin-left: 40%;
+} */
