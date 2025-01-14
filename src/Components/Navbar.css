@@ -67,8 +67,8 @@
     background-color: white;
     color: black;
   }
-  .icon {
-    color: black;
+  .nav-text a:hover .icon-container svg {
+    fill: black !important; 
   }
 
 

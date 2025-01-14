@@ -89,13 +89,13 @@ function Navbar() {
 
                   <li key={index} style={{fontFamily:'serif'}} id='list' className={item.cName}>
                     <Link to={item.path}>
-                      <span className='icon'>{item.icon}</span>
+                    <span className="icon-container">{item.icon}</span>
                       <span>{item.title}</span>
                     </Link>
 
                   </li>
                 );
-              })}
+              })} 
               
 
               <div className="logout-button-container" >
