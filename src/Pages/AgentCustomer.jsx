@@ -86,7 +86,7 @@ const AgentCustomer = () => {
           style={{
             textAlign: "center",
             fontFamily: "serif",
-            color: "#4F6F52",
+            color: "#EB5A3C",
           }}
         >
          Agent Customers
@@ -125,7 +125,7 @@ const AgentCustomer = () => {
               style={{
                 marginRight: "5px",
                 marginLeft: "5px",
-                background: "#4F6F52",
+                background: "#EB5A3C",
                 color: "white",
               }}
               onClick={searchCustomers}
@@ -150,7 +150,7 @@ const AgentCustomer = () => {
               style={{
                 marginRight: "5px",
                 marginLeft: "5px",
-                background: "#4F6F52",
+                background: "#EB5A3C",
                 color: "white",
               }}
               onClick={searchByAccountNo}

@@ -384,7 +384,7 @@ const Addagent = () => {
                 <div className='container-fluid' >
                     <div className='row'>
                         <div className='d-flex justify-content-center' >
-                            <h1 className='fw-bold' style={{fontFamily:'serif',color:'#4F6F52'}}>Add Agent</h1>
+                            <h1 className='fw-bold' style={{fontFamily:'serif',color:'#EB5A3C'}}>Add Agent</h1>
                         </div>
                         {/* <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100vw' }} >
                         <RxAvatar size={180} />
@@ -506,7 +506,7 @@ const Addagent = () => {
                                     </tr>
                                 </div>
                                 <div style={{ display: "flex", justifyContent: 'end', alignItems: 'end' }}>
-                                    <button type='submit' className='btn btn-success'>Save</button>
+                                    <button type='submit' className='btn btn-success' style={{ backgroundColor:"#EB5A3C"}}>Save</button>
                                 </div>
                             </form>
 

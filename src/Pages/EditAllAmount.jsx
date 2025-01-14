@@ -68,7 +68,7 @@ const EditAllAmount = () => {
       <div>
         <h2
           className="mt-4 fw-bold"
-          style={{ fontFamily: "serif", textAlign: "center",color:'#4F6F52' }}
+          style={{ fontFamily: "serif", textAlign: "center",color:'#EB5A3C' }}
         >
           Select Edit Of Amount
         </h2>

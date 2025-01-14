@@ -176,7 +176,7 @@ const Dashboard = () => {
           <div className="row">
             <h1
               className="mt-3 fw-bold"
-              style={{ textAlign: "center", fontFamily: "serif",color:'#4F6F52' }}
+              style={{ textAlign: "center", fontFamily: "serif",color:'#EB5A3C' }}
             >
               {" "}
               Daily Deposit
@@ -208,7 +208,7 @@ const Dashboard = () => {
               <p>
                 <button
                   className="btn "
-                  style={{ marginLeft: "5px",background:'#4F6F52',color:'white' }}
+                  style={{ marginLeft: "5px",background:'#EB5A3C',color:'white' }}
                   onClick={searchCustomers}
                 >
                   Search
@@ -236,7 +236,7 @@ const Dashboard = () => {
               <p>
                 <button
                   className="btn  "
-                  style={{ marginLeft: "5px", background:'#4F6F52',color:'white' }}
+                  style={{ marginLeft: "5px", background:'#EB5A3C',color:'white' }}
                   onClick={No_withdrawal}
                 >
                   Search
@@ -261,7 +261,7 @@ const Dashboard = () => {
               <p>
                 <button
                   className="btn  "
-                  style={{ marginLeft: "5px", background:'#4F6F52',color:'white' }}
+                  style={{ marginLeft: "5px", background:'#EB5A3C',color:'white' }}
                   onClick={() => generateCSV()}
                 >
                   Generate CSV
@@ -346,7 +346,7 @@ const Dashboard = () => {
                               <td style={{ fontSize: "20px" }}>{val.amount}</td>
                               <td style={{ fontSize: "18px",display :'flex' }}>
                                 <Link
-                                  style={{ textDecoration: "none", color:'#4F6F52' }}
+                                  style={{ textDecoration: "none", color:'#EB5A3C' }}
                                   to={`/viewcustomer/${val.id}`}
                                 >
                                   <p>

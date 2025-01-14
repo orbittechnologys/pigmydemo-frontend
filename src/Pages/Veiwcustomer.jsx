@@ -39,14 +39,14 @@ const ViewCustomer = () => {
 
 
                     <div className='container' style={{ textAlign: "start", width: '500px' }}>
-                        <p className='fw-bold fs-4' style={{color:'#4F6F52'}}>Customer Details:</p>
+                        <p className='fw-bold fs-4' style={{color:'#EB5A3C'}}>Customer Details:</p>
                         {/* <p className='fw-bold fs-4'>agentId: <span className='fw-bold fs-5'>{viewCustomer && viewCustomer.agentId}</span></p> */}
                         {/* <p className='fw-bold fs-4'>agentName:<span className='fw-bold fs-5'> {viewCustomer && viewCustomer.agentName}</span></p> */}
                         <p className='fw-bold '>Customer Name: <span >{ viewCustomer && viewCustomer.customerName}</span></p>
                         <p className='fw-bold '>Customer ID: <span >{ viewCustomer && viewCustomer.customerId}</span></p>
                         <p className='fw-bold '>Customer Account Balance:<span > {viewCustomer && viewCustomer.customerAccountBalance}</span></p>
                         
-                        <p className='fw-bold fs-4' style={{color:'#4F6F52'}}>Transaction Details:</p>
+                        <p className='fw-bold fs-4' style={{color:'#EB5A3C'}}>Transaction Details:</p>
 
 
                         {

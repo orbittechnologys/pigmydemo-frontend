@@ -33,7 +33,7 @@ const Resetpassword = () => {
 
   return (
     <div className='container' style={{textAlign:'center'}}>
-      <h1 className='mt-3 fw-bold' style={{fontFamily:'serif',color:'#4F6F52'}}>Enter Your Email</h1>
+      <h1 className='mt-3 fw-bold' style={{fontFamily:'serif',color:'#EB5A3C'}}>Enter Your Email</h1>
         <form onSubmit={resetpass}>
       <input className='form-control' value={email} type='text' placeholder='Enter Email' onChange={e=>setemail(e.target.value)}/>
       <p>{status}</p>

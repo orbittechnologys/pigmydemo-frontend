@@ -61,7 +61,7 @@ const Alladmin = () => {
         <Loader />
       ) : (
         <div className='container-fluid 100vh 100vw'>
-          <h1 className='fw-bold' style={{ display: 'flex', justifyContent: 'center', fontFamily: 'serif', marginTop: '1%',color:'#4F6F52' }}>All Admin</h1>
+          <h1 className='fw-bold' style={{ display: 'flex', justifyContent: 'center', fontFamily: 'serif', marginTop: '1%',color:'#EB5A3C' }}>All Admin</h1>
 
           <div className='row'>
             <div style={{ display: "flex", justifyContent: "end",  }}>
@@ -77,12 +77,12 @@ const Alladmin = () => {
                   onChange={handleSearchInput} // Handle input changes
                 /></p>
                 
-                <p><button className='btn' style={{ marginLeft:'5px', padding: '6px 25px' ,background:'#4F6F52',color:'white'}} onClick={searchCustomers}>Search</button></p>
+                <p><button className='btn' style={{ marginLeft:'5px', padding: '6px 25px' ,background:'#EB5A3C',color:'white'}} onClick={searchCustomers}>Search</button></p>
               </div>
 
               <div>
                 <p><Link to='/addadmin'>
-                <button style={{ fontSize: '16px',fontFamily:'serif',background:"#4F6F52", color:'whitesmoke' }}  className='btn'>Add Admin </button>
+                <button style={{ fontSize: '16px',fontFamily:'serif',background:"#EB5A3C", color:'whitesmoke' }}  className='btn'>Add Admin </button>
                 </Link></p>
               </div>
 

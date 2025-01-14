@@ -83,11 +83,11 @@ const AllLoan = () => {
             ) : (
                 <div className='container-fluid'>
                     <div style={{ padding: '5px 10px' }}>
-                    <h1 className='fw-bold' style={{textAlign:"center", marginTop:'1%', fontFamily:'serif',color:'#4F6F52'}}> Loan Account Details</h1>
+                    <h1 className='fw-bold' style={{textAlign:"center", marginTop:'1%', fontFamily:'serif',color:'#EB5A3C'}}> Loan Account Details</h1>
                         <div className='d-flex justify-content-end'>
                             <p style={{ display: 'flex', justifyContent: 'end' }}>
                             <div>
-                                <th style={{color:'#4F6F52'}}>Phone Number</th>
+                                <th style={{color:'#EB5A3C'}}>Phone Number</th>
                                 <input
                                     type='text'
                                     className='form-control'
@@ -97,7 +97,7 @@ const AllLoan = () => {
                                 />
                                 </div>
                                 <div style={{marginLeft:'2%',marginRight:'2%'}}>
-                                <th style={{color:'#4F6F52'}}>Start Date</th>
+                                <th style={{color:'#EB5A3C'}}>Start Date</th>
                                 <input
                                     type='date'
                                     style={{ marginLeft: '2%' }}
@@ -107,7 +107,7 @@ const AllLoan = () => {
                                     />
                                     </div>
                                     <div style={{marginLeft:'2%',marginRight:'2%'}}>
-                                <th style={{color:'#4F6F52'}}>End Date</th>
+                                <th style={{color:'#EB5A3C'}}>End Date</th>
                                 <input
                                     type='date'
                                     style={{ marginLeft: '2%' }}
@@ -121,7 +121,7 @@ const AllLoan = () => {
 
                             
                             <p>
-                                <button className='btn' style={{ marginRight: '5px', marginLeft: '5px' ,marginTop:'30%',background:'#4F6F52',color:'white'}} onClick={searchCustomers}>
+                                <button className='btn' style={{ marginRight: '5px', marginLeft: '5px' ,marginTop:'30%',background:'#EB5A3C',color:'white'}} onClick={searchCustomers}>
                                     Search
                                 </button>
                             </p>

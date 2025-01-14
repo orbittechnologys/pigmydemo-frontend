@@ -109,7 +109,7 @@ const Commission = () => {
             ) : (
                 <div className='container-fluid p-5'>
                     
-                    <h1 className='fw-bold' style={{textAlign:"center", fontFamily:'serif',color:'#4F6F52' }}>Daily Deposit Profit</h1>
+                    <h1 className='fw-bold' style={{textAlign:"center", fontFamily:'serif',color:'#EB5A3C' }}>Daily Deposit Profit</h1>
                         <div className='d-flex justify-content-end'>
                             <p style={{ display: 'flex', justifyContent: 'end' }}>
                                 <input
@@ -128,7 +128,7 @@ const Commission = () => {
                                 />
                             </p>
                             <p>
-                                <button className='btn' style={{ marginRight: '5px', marginLeft: '5px' ,color:'white',background:'#4F6F52'}} onClick={searchCustomers}>
+                                <button className='btn' style={{ marginRight: '5px', marginLeft: '5px' ,color:'white',background:'#EB5A3C'}} onClick={searchCustomers}>
                                     Search
                                 </button>
                             </p>
@@ -144,7 +144,7 @@ const Commission = () => {
                                 />
                             </p>
                             <p>
-                                <button className='btn ' style={{ marginRight: '5px', marginLeft: '5px',background:'#4F6F52',color:'white' }} onClick={searchByAccountNo}>
+                                <button className='btn ' style={{ marginRight: '5px', marginLeft: '5px',background:'#EB5A3C',color:'white' }} onClick={searchByAccountNo}>
                                     Search
                                 </button>
                             </p>

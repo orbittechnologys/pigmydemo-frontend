@@ -257,7 +257,7 @@ const Deposite = () => {
               onMouseLeave={() => setIsHovered(false)}
             >
               <div className="mt-5">
-                <h3 className="fw-bold" style={{ fontFamily: "serif",color:'#4F6F52' }}> Loan Deposit Only</h3>
+                <h3 className="fw-bold" style={{ fontFamily: "serif",color:'#EB5A3C' }}> Loan Deposit Only</h3>
                 <div>
                     <tr>
                     <p>
@@ -347,7 +347,7 @@ const Deposite = () => {
               onMouseLeave={() => setIsPigmy(false)}
             >
               <div className="mt-5">
-                <h3 className="fw-bold" style={{ fontFamily: "serif",color:'#4F6F52' }}>All Type Deposit</h3>
+                <h3 className="fw-bold" style={{ fontFamily: "serif",color:'#EB5A3C' }}>All Type Deposit</h3>
 
                 <div >
 

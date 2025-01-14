@@ -85,7 +85,7 @@ const Agent = () => {
       ) : (
         <div className='container-fluid 100vh 100vw' style={{ padding: '1%' }}>
           <div className='row'>
-            <h1 className='fw-bold' style={{ textAlign: 'center' ,fontFamily:'serif',color:'#4F6F52'}}>All Agents</h1>
+            <h1 className='fw-bold' style={{ textAlign: 'center' ,fontFamily:'serif',color:'#EB5A3C'}}>All Agents</h1>
             <div style={{display:"flex",justifyContent:"end" }}>
 
               
@@ -101,12 +101,12 @@ const Agent = () => {
                 {/* <div style={{ marginLeft: '180px', position: 'absolute' }}>
                   <p><GrFormSearch style={{ opacity: '50%' }} fontSize={25} /></p>
                 </div> */}
-              <button className='btn' style={{marginTop:'-20px', marginLeft: '5px', padding: '6px 25px', background:'#4F6F52',color:'white' }} onClick={searchCustomers}>Search</button>
+              <button className='btn' style={{marginTop:'-20px', marginLeft: '5px', padding: '6px 25px', background:'#EB5A3C',color:'white' }} onClick={searchCustomers}>Search</button>
               </div>
 
               <div>
               <Link to='/addagent'>
-              <button style={{ fontSize: '16px',fontFamily:'serif',background:"#4F6F52",color:'whitesmoke' }}  className='btn'>Add Agent </button>
+              <button style={{ fontSize: '16px',fontFamily:'serif',background:"#EB5A3C",color:'whitesmoke' }}  className='btn'>Add Agent </button>
               </Link>
               </div>
               

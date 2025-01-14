@@ -212,14 +212,14 @@ const Csvfile = () => {
   return (
 
     <div className='container-fluid'>
-      <h1 className='mt-3 fw-bold' style={{ textAlign: 'center',fontFamily:"serif",color:'#4F6F52' }}>Download Reports</h1>
+      <h1 className='mt-3 fw-bold' style={{ textAlign: 'center',fontFamily:"serif",color:'#EB5A3C' }}>Download Reports</h1>
       <div className='row'>
 
 
 
         <div className='col-lg-4' style={{ display: 'flex', justifyContent: 'center' }}>
           <div>
-            <h3 style={{fontFamily:'serif', color:'#4F6F52'}} className='mt-5'>Reports For Daily Deposit</h3>
+            <h3 style={{fontFamily:'serif', color:'#EB5A3C'}} className='mt-5'>Reports For Daily Deposit</h3>
             <div className='mt-5'>
               <tr>
                 <th>Agent ID</th>
@@ -252,7 +252,7 @@ const Csvfile = () => {
 
 
 
-            <h3 style={{ width: '30vw', fontSize: '25px', fontFamily:"serif",color:'#4F6F52'  }} className='mt-5'> Reports For All Account Types</h3>
+            <h3 style={{ width: '30vw', fontSize: '25px', fontFamily:"serif",color:'#EB5A3C'  }} className='mt-5'> Reports For All Account Types</h3>
             <select value={Account} className='form-control' onChange={e => setAccount(e.target.value)}>
 
               <option value=''>Select Type of Account</option>
@@ -360,7 +360,7 @@ const Csvfile = () => {
 
         <div className='col-lg-4' style={{ display: 'flex', justifyContent: 'center' }}>
           <div>
-            <h3 style={{fontFamily:'serif', color:'#4F6F52'}} className='mt-5'>Reports For All Customers</h3>
+            <h3 style={{fontFamily:'serif', color:'#EB5A3C'}} className='mt-5'>Reports For All Customers</h3>
             <div className='mt-5'>
               <tr>
                 <th>Start Date</th>

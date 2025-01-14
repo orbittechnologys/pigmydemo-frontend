@@ -282,7 +282,7 @@ const Addcustomer = () => {
           <div className="d-flex justify-content-center">
             <h1
               className="fw-bold"
-              style={{ fontFamily: "serif", color: "#4F6F52" }}
+              style={{ fontFamily: "serif", color: "#EB5A3C" }}
             >
               {" "}
               Add Customer
@@ -532,7 +532,7 @@ const Addcustomer = () => {
                   alignItems: "end",
                 }}
               >
-                <button type="submit" className="btn btn-success">
+                <button type="submit" className="btn btn-success"style={{ backgroundColor:"#EB5A3C"}}>
                   Save
                 </button>
               </div>

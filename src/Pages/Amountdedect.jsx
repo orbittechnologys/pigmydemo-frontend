@@ -188,7 +188,7 @@ const Amountdedect = () => {
            onMouseLeave={() => setIsPigmy(false)}
            >
             <div className="px-5">
-              <h3 className="mt-5 fw-bold" style={{ fontFamily: "serif",color:'#4F6F52' }}>
+              <h3 className="mt-5 fw-bold" style={{ fontFamily: "serif",color:'#EB5A3C' }}>
               Daily Deposit Withdrawal Amount
               </h3>
 
@@ -208,7 +208,7 @@ const Amountdedect = () => {
                     </td>
                     
                     <td>
-                    <button className="btn btn-success" type="button" onClick={() => handleDDAccountSearch()}>
+                    <button className="btn btn-success" style={{backgroundColor:'#EB5A3C'}} type="button" onClick={() => handleDDAccountSearch()}>
                       Search
                     </button>
                     </td>
@@ -294,7 +294,7 @@ const Amountdedect = () => {
            onMouseLeave={() => setIsPigmy(false)}
            >
             <div className="px-5">
-              <h3 className="mt-5 fw-bold" style={{ fontFamily: "serif",color:'#4F6F52' }}>
+              <h3 className="mt-5 fw-bold" style={{ fontFamily: "serif",color:'#EB5A3C' }}>
                All Type Withdrawal Amount
               </h3>
 
@@ -314,7 +314,7 @@ const Amountdedect = () => {
                     </td>
                     
                     <td>
-                    <button className="btn btn-success" type="button" onClick={() => handleAccountSearch()}>
+                    <button className="btn btn-success" style={{backgroundColor:'#EB5A3C'}} type="button" onClick={() => handleAccountSearch()}>
                       Search
                     </button>
                     </td>
@@ -400,7 +400,7 @@ const Amountdedect = () => {
           onMouseLeave={() => setIsHovered(false)}
           >
             <div>
-              <h3 style={{ fontFamily: "serif" ,color:'#4F6F52'}} className="mt-5 fw-bold">
+              <h3 style={{ fontFamily: "serif" ,color:'#EB5A3C'}} className="mt-5 fw-bold">
                 All Type Withdrawal Amount
               </h3>
               <div className="mt-5">

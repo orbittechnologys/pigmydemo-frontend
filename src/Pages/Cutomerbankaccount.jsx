@@ -62,7 +62,7 @@ const Cutomerbankaccount = () => {
         <div className="p-5">
           <h3
             className="d-flex justify-content-center fw-bold"
-            style={{ fontFamily: "serif", color: "#4F6F52" }}
+            style={{ fontFamily: "serif", color: "#EB5A3C" }}
           >
             Add Account
           </h3>

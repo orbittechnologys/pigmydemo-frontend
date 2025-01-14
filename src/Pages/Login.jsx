@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Loader from './Loader';
 import Cookies from 'js-cookie';
+import "../../src/App.css"
+
 
 
 function Login() {
@@ -63,10 +65,17 @@ function Login() {
       <div className='container' style={{ width: '400px' }}>
         <div className='row'>
           <div style={{ marginTop: '17%', borderRadius: '15px', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px' }}>
-            <img src='uniologo.jpeg' alt='not found' width={350} height={150} />
-            <h3 style={{ textAlign: 'center' }}>Welcome to Union Bank</h3>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: '20px',
+            }}>
+            <img src='orbit.png' alt='not found' width={150} height={90} />
+          <h3 style={{ textAlign: 'center', whiteSpace:"nowrap", fontSize: '20px', color: 'rgba(71, 108, 62, 1)' }}>Welcome Orbit  Bank</h3>
+            </div>
 
-            <form onSubmit={formSubmit} style={{ marginTop: '10%' }}>
+            <form onSubmit={formSubmit} style={{  }}>
               <div className='mt-2 mb-3'>
                 <input
                   type='email'
@@ -97,7 +106,7 @@ function Login() {
               <div>
                 <input
                   type='submit'
-                  style={{ background: 'rgba(71, 108, 62, 1)' }}
+                  style={{ background: '#EB5A3C' }}
                   className='btn form-control mt-2 mb-2 text-white'
                   value='Login'
                 />

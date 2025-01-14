@@ -246,7 +246,7 @@ const Editcustomer = () => {
         <div className='container-fluid' >
             <div className='row'>
                 <div className='d-flex justify-content-center mt-5' >
-                    <h2 className='fw-bold' style={{fontFamily:'serif', color:'#4F6F52'}}> Edit Customer</h2>
+                    <h2 className='fw-bold' style={{fontFamily:'serif', color:'#EB5A3C'}}> Edit Customer</h2>
                 </div>
 
 

@@ -163,7 +163,7 @@ const AddAdmin = () => {
                 ) : (
 
                     <>
-                        <h1 className='mt-3 fw-bold' style={{ display: 'flex', justifyContent: 'center', fontFamily: 'serif', color:'#4F6F52' }}>Add Admin</h1>
+                        <h1 className='mt-3 fw-bold' style={{ display: 'flex', justifyContent: 'center', fontFamily: 'serif', color:'#EB5A3C' }}>Add Admin</h1>
 
 
 
@@ -247,7 +247,7 @@ const AddAdmin = () => {
                                     </div>
 
                                     <div style={{ display: "flex", justifyContent: 'end', alignItems: 'end' }}>
-                                        <button type='submit' className='btn btn-success'>Save</button>
+                                        <button type='submit' className='btn btn-success' style={{ backgroundColor:"#EB5A3C"}}>Save</button>
                                     </div>
 
                                 </form>

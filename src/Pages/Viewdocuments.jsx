@@ -32,7 +32,7 @@ const Viewdocuments = () => {
                     <Loader/>
                 ):(
                     <div className='row mt-5'>
-                        <h2 className='mb-5 fw-bold' style={{textAlign:"center",fontFamily:'serif',color:'#4F6F52'}}> All Documents of {imageData?.customerName}</h2>
+                        <h2 className='mb-5 fw-bold' style={{textAlign:"center",fontFamily:'serif',color:'#EB5A3C'}}> All Documents of {imageData?.customerName}</h2>
                 <div className='col-lg-6'>
                     <div >
 

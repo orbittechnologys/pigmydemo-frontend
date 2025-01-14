@@ -171,7 +171,7 @@ const Customer = () => {
             style={{
               textAlign: "center",
               fontFamily: "serif",
-              color: "#4F6F52",
+              color: "#EB5A3C",
             }}
           >
             Customers
@@ -189,7 +189,7 @@ const Customer = () => {
                   style={{
                     fontSize: "16px",
                     fontFamily: "serif",
-                    background: "#4F6F52",
+                    background: "#EB5A3C",
                     color: "whitesmoke",
                   }}
                   className="btn"
@@ -210,7 +210,7 @@ const Customer = () => {
                   marginLeft: "5px",
 
                   padding: "5px 10px",
-                  background: "#4F6F52",
+                  background: "#EB5A3C",
                   color: "white",
                   borderRadius: "5px",
                   border: "none",
@@ -243,7 +243,7 @@ const Customer = () => {
                     style={{
                       marginRight: "5px",
                       marginLeft: "5px",
-                      background: "#4F6F52",
+                      background: "#EB5A3C",
                       color: "white",
                     }}
                     onClick={searchCustomers}
@@ -268,7 +268,7 @@ const Customer = () => {
                   style={{
                     marginRight: "5px",
                     marginLeft: "5px",
-                    background: "#4F6F52",
+                    background: "#EB5A3C",
                     color: "white",
                   }}
                   onClick={searchByAccountNo}

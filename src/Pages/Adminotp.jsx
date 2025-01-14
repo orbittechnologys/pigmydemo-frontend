@@ -43,7 +43,7 @@ const Adminotp = () => {
         <div>
             <div className='container mt-2' style={{ textAlign: 'center' }} >
 
-                <h2 className='fw-bold' style={{fontFamily:'serif', color:'#4F6F52'}}> ONE TIME PASSWORD</h2>
+                <h2 className='fw-bold' style={{fontFamily:'serif', color:'#EB5A3C'}}> ONE TIME PASSWORD</h2>
 
 
 

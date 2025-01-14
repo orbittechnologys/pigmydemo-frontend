@@ -42,7 +42,7 @@ const Otp = () => {
     <div>
       <div className='container mt-2' style={{ textAlign: 'center' }} >
 
-        <h1 className='fw-bold' style={{fontFamily:'serif',color:'#4F6F52'}}> ONE TIME PASSWORD</h1>
+        <h1 className='fw-bold' style={{fontFamily:'serif',color:'#EB5A3C'}}> ONE TIME PASSWORD</h1>
 
 
 

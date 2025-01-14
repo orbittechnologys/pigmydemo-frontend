@@ -1,6 +1,6 @@
 .table-success {
     --bs-table-color: #fff !important;
-    --bs-table-bg: #4F6F52 !important;
+    --bs-table-bg: #EB5A3C !important;
     --bs-table-border-color: #bcd0c7;
     --bs-table-striped-bg: #c7dbd2;
     --bs-table-striped-color: #fff;
@@ -17,9 +17,16 @@
     width: 450px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
-    
+    //4F6F52
 }
 .next{
     
    margin-left: 40%;
 } */
+
+
+
+
+.primary {
+  background-color: #EB5A3C;
+}
