@@ -18,3 +18,16 @@ code {
 .primary {
   background-color: #EB5A3C;
 }
+
+
+
+.menu-item {
+  font-family: serif;
+  color: inherit;
+  transition: color 0.3s ease; 
+}
+
+.menu-item:hover {
+  color: white;
+}
+
