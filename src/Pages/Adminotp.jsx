@@ -18,7 +18,7 @@ const Adminotp = () => {
     e.preventDefault();
     axios
       .patch(
-        `https://orbitpay.uur.co.in:8443/admin/password/forget/${uuid}/${newPassword}`,
+        `https://orbitpay.uur.co.in/admin/password/forget/${uuid}/${newPassword}`,
         {
           uuid: uuid,
           newPassword: newPassword,

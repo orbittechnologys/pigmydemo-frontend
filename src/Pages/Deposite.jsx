@@ -30,7 +30,7 @@ const Deposite = () => {
 
   const Allagent = () => {
     axios
-      .get("https://orbitpay.uur.co.in:8443/agent/getAllAgents")
+      .get("https://orbitpay.uur.co.in/agent/getAllAgents")
       .then((response) => {
         console.log(response.data.data);
         setAgent(response.data.data);
@@ -48,7 +48,7 @@ const Deposite = () => {
 
   const AgentCustomer = () => {
     axios
-      .get("https://orbitpay.uur.co.in:8443/agent/getCustomers", {
+      .get("https://orbitpay.uur.co.in/agent/getCustomers", {
         params: {
           agentId: selectedAgentId,
         },
@@ -104,7 +104,7 @@ const Deposite = () => {
 
       // Use axios.put and pass data in the request body
       const response = await axios.put(
-        "https://orbitpay.uur.co.in:8443/transaction/depositOfLoanAmount",
+        "https://orbitpay.uur.co.in/transaction/depositOfLoanAmount",
         null,
         {
           params: {
@@ -147,7 +147,7 @@ const Deposite = () => {
     try {
       // Use axios.put and pass data in the request body
       const response = await axios.post(
-        "https://orbitpay.uur.co.in:8443/transaction/newDepositAmount/v2",
+        "https://orbitpay.uur.co.in/transaction/newDepositAmount/v2",
         null,
         {
           params: {
@@ -184,7 +184,7 @@ const Deposite = () => {
   const getAllCustomer = () => {
     axios
       .get(
-        `https://orbitpay.uur.co.in:8443/customer/findCustomerByPhoneNumber/${phoneAll}`,
+        `https://orbitpay.uur.co.in/customer/findCustomerByPhoneNumber/${phoneAll}`,
       )
       .then((response) => {
         console.log(response.data.data.customerAccount);
@@ -205,7 +205,7 @@ const Deposite = () => {
   const getAllCustomerAccountNumber = () => {
     axios
       .get(
-        `https://orbitpay.uur.co.in:8443/customer/findCustomerByPhoneNumber/${phone}`,
+        `https://orbitpay.uur.co.in/customer/findCustomerByPhoneNumber/${phone}`,
       )
       .then((response) => {
         console.log(response.data.data.customerAccount);

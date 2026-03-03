@@ -1,3 +1,3 @@
-const BASE_URL = "https://orbitpay.uur.co.in:8443";
+const BASE_URL = "https://orbitpay.uur.co.in/";
 
 export { BASE_URL };

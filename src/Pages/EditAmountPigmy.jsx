@@ -21,7 +21,7 @@ const EditAmountPigmy = () => {
     try {
       // Use axios.put and pass data in the request body
       const response = await axios.patch(
-        `https://orbitpay.uur.co.in:8443/transaction/updateTransactionToAddAmount/${pigmyId}/${amountadd}`,
+        `https://orbitpay.uur.co.in/transaction/updateTransactionToAddAmount/${pigmyId}/${amountadd}`,
       );
       console.log(response.data); // Log the response if needed
       alert("Amount Changes Success");
@@ -47,7 +47,7 @@ const EditAmountPigmy = () => {
     try {
       // Use axios.put and pass data in the request body
       const response = await axios.patch(
-        `https://orbitpay.uur.co.in:8443/transaction/updateTransactionToLessAmount/${pigmyId}/${amountLess}`,
+        `https://orbitpay.uur.co.in/transaction/updateTransactionToLessAmount/${pigmyId}/${amountLess}`,
       );
       console.log(response.data); // Log the response if needed
       alert("Amount Changes Success");

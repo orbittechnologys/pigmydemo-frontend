@@ -37,7 +37,7 @@ const Amountdedect = () => {
       console.log(data);
       // Use axios.put and pass data in the request body
       const response = await axios.put(
-        "https://orbitpay.uur.co.in:8443/customer/withDrawalOfAmount",
+        "https://orbitpay.uur.co.in/customer/withDrawalOfAmount",
         null,
         {
           params: {
@@ -70,7 +70,7 @@ const Amountdedect = () => {
       console.log(data);
       // Use axios.put and pass data in the request body
       const response = await axios.put(
-        "https://orbitpay.uur.co.in:8443/transaction/withdrawalOfAllAccountTypeAmount",
+        "https://orbitpay.uur.co.in/transaction/withdrawalOfAllAccountTypeAmount",
         null,
         {
           params: {
@@ -104,7 +104,7 @@ const Amountdedect = () => {
   const getAllCustomer = () => {
     axios
       .get(
-        `https://orbitpay.uur.co.in:8443/customer/findCustomerByPhoneNumber/${phone}`,
+        `https://orbitpay.uur.co.in/customer/findCustomerByPhoneNumber/${phone}`,
       )
       .then((response) => {
         console.log(response.data.data.customerAccount);

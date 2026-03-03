@@ -17,7 +17,7 @@ const Otp = () => {
     e.preventDefault();
     axios
       .patch(
-        `https://orbitpay.uur.co.in:8443/agent/password/forget/${uuid}/${newPassword}`,
+        `https://orbitpay.uur.co.in/agent/password/forget/${uuid}/${newPassword}`,
         {
           uuid: uuid,
           newPassword: newPassword,

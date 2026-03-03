@@ -18,7 +18,7 @@ const EditAllAmount = () => {
     try {
       // Use axios.put and pass data in the request body
       const response = await axios.patch(
-        `https://orbitpay.uur.co.in:8443/transaction/updateAllTransactionToAddAmount/${pigmyId}/${amountadd}`,
+        `https://orbitpay.uur.co.in/transaction/updateAllTransactionToAddAmount/${pigmyId}/${amountadd}`,
       );
       console.log(response.data); // Log the response if needed
       alert("Amount Changes Success");
@@ -43,7 +43,7 @@ const EditAllAmount = () => {
     try {
       // Use axios.put and pass data in the request body
       const response = await axios.patch(
-        `https://orbitpay.uur.co.in:8443/transaction/updateAllTransactionToLessAmount/${pigmyId}/${amountLess}`,
+        `https://orbitpay.uur.co.in/transaction/updateAllTransactionToLessAmount/${pigmyId}/${amountLess}`,
       );
       console.log(response.data); // Log the response if needed
       alert("Amount Changes Success");

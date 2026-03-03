@@ -32,7 +32,7 @@ const Csvfile = () => {
 
     axios
       .get(
-        `https://orbitpay.uur.co.in:8443/transaction/csv/${AgentId}/${selectedDate}`,
+        `https://orbitpay.uur.co.in/transaction/csv/${AgentId}/${selectedDate}`,
       )
       .then((response) => {
         // Extract CSV data from the response
@@ -73,7 +73,7 @@ const Csvfile = () => {
     if (phone) {
       axios
         .get(
-          `https://orbitpay.uur.co.in:8443/customer/findCustomerByPhoneNumber/${phone}`,
+          `https://orbitpay.uur.co.in/customer/findCustomerByPhoneNumber/${phone}`,
         )
         .then((response) => {
           console.log(response.data.data.customerAccount);
@@ -94,7 +94,7 @@ const Csvfile = () => {
 
     axios
       .get(
-        `https://orbitpay.uur.co.in:8443/transaction/customerTransactionCSV/${phone}/${accountType}/${startDate}/${endDate}`,
+        `https://orbitpay.uur.co.in/transaction/customerTransactionCSV/${phone}/${accountType}/${startDate}/${endDate}`,
       )
       .then((response) => {
         // Extract CSV data from the response
@@ -134,7 +134,7 @@ const Csvfile = () => {
 
     axios
       .get(
-        `https://orbitpay.uur.co.in:8443/transaction/customerTransactionCsvForAllAccountTypes/${phone}/${startDate}/${endDate}`,
+        `https://orbitpay.uur.co.in/transaction/customerTransactionCsvForAllAccountTypes/${phone}/${startDate}/${endDate}`,
       )
       .then((response) => {
         // Extract CSV data from the response
@@ -174,7 +174,7 @@ const Csvfile = () => {
 
     axios
       .get(
-        `https://orbitpay.uur.co.in:8443/transaction/generateAllCustomersCsvForAllAccountTypes/${selectstartdate}/${selectenddate}`,
+        `https://orbitpay.uur.co.in/transaction/generateAllCustomersCsvForAllAccountTypes/${selectstartdate}/${selectenddate}`,
       )
       .then((response) => {
         // Extract CSV data from the response

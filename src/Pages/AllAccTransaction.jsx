@@ -49,7 +49,7 @@ const AllAccTransaction = () => {
     setLoading(true);
     axios
       .get(
-        `https://orbitpay.uur.co.in:8443/transaction/getAllAccountTypeTransactions/${currentpage}/${recordsperpages}/${selectedvalue}`,
+        `https://orbitpay.uur.co.in/transaction/getAllAccountTypeTransactions/${currentpage}/${recordsperpages}/${selectedvalue}`,
       )
       .then((response) => {
         // console.log(response)
@@ -67,7 +67,7 @@ const AllAccTransaction = () => {
   // const searchCustomers =async () => {
   //     console.log(phone,startDate,endDate)
   //     setLoading(true);
-  //     await axios.get(`https://orbitpay.uur.co.in:8443/transaction/getAllAccountTypeTransactions/${phone}/${startDate}/${endDate}`)
+  //     await axios.get(`https://orbitpay.uur.co.in/transaction/getAllAccountTypeTransactions/${phone}/${startDate}/${endDate}`)
   //     .then((response) => {
   //         console.log(response);
   //         setSearchResults(response.data.data);
@@ -89,7 +89,7 @@ const AllAccTransaction = () => {
     setLoading(true);
     console.log(phone, startDate, endDate);
     axios
-      .get("https://orbitpay.uur.co.in:8443/transaction/getApiAllAccountType", {
+      .get("https://orbitpay.uur.co.in/transaction/getApiAllAccountType", {
         params: {
           endDate: endDate,
           phone: phone,

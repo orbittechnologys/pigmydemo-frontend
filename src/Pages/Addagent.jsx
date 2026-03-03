@@ -54,7 +54,7 @@ const Addagent = () => {
     console.log(data);
 
     axios
-      .post("https://orbitpay.uur.co.in:8443/agent/save", data)
+      .post("https://orbitpay.uur.co.in/agent/save", data)
       .then((response) => {
         console.log(response);
         alert("Thank you for Registration");

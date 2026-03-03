@@ -14,7 +14,7 @@ const Adminresetpass = () => {
     e.preventDefault();
     axios
       .post(
-        `https://orbitpay.uur.co.in:8443/admin/password/verifyEmailBeforeUpdatePassword/${email}`,
+        `https://orbitpay.uur.co.in/admin/password/verifyEmailBeforeUpdatePassword/${email}`,
         email,
       )
       .then((respose) => {

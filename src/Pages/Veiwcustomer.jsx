@@ -15,9 +15,7 @@ const ViewCustomer = () => {
   const fetchCustomer = () => {
     setLoading(true);
     axios
-      .get(
-        `https://orbitpay.uur.co.in:8443/transaction/findByTransactionId/${id}`,
-      )
+      .get(`https://orbitpay.uur.co.in/transaction/findByTransactionId/${id}`)
       .then((response) => {
         console.log(response.data.data);
         setViewCustomer(response.data.data);

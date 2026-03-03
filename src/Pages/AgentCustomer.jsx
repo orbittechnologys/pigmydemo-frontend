@@ -16,7 +16,7 @@ const AgentCustomer = () => {
 
   const AgentCustomer = () => {
     axios
-      .get("https://orbitpay.uur.co.in:8443/agent/getCustomers", {
+      .get("https://orbitpay.uur.co.in/agent/getCustomers", {
         params: {
           agentId: id,
         },

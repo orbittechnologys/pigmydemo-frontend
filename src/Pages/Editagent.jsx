@@ -33,7 +33,7 @@ const Editagent = () => {
 
   useEffect(() => {
     axios
-      .get(`https://orbitpay.uur.co.in:8443/agent/id/${id}`)
+      .get(`https://orbitpay.uur.co.in/agent/id/${id}`)
       .then((result) => {
         console.log(result.data.data);
         seteditdata({ ...result.data.data });
@@ -260,7 +260,7 @@ const Editagent = () => {
     };
     console.log(data);
     axios
-      .put("https://orbitpay.uur.co.in:8443/agent/updateAgent", data)
+      .put("https://orbitpay.uur.co.in/agent/updateAgent", data)
       .then((response) => {
         console.log(response);
         alert("Update successfully");

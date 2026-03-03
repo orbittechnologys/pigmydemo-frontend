@@ -11,7 +11,7 @@ const Viewdocuments = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://orbitpay.uur.co.in:8443/customer/id/${id}`)
+      .get(`https://orbitpay.uur.co.in/customer/id/${id}`)
       .then((result) => {
         console.log(result.data.data);
         setImageData(result.data.data);

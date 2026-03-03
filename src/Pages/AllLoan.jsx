@@ -35,7 +35,7 @@ const AllLoan = () => {
     setLoading(true);
     axios
       .get(
-        `https://orbitpay.uur.co.in:8443/transaction/getAllLoan/${currentpage}/${recordsperpages}/${selectedvalue}`,
+        `https://orbitpay.uur.co.in/transaction/getAllLoan/${currentpage}/${recordsperpages}/${selectedvalue}`,
       )
       .then((response) => {
         console.log(response);
@@ -54,7 +54,7 @@ const AllLoan = () => {
     console.log(phone, startDate, endDate);
     axios
       .get(
-        `https://orbitpay.uur.co.in:8443/transaction/getAllLoanTransactions/${phone}/${startDate}/${endDate}`,
+        `https://orbitpay.uur.co.in/transaction/getAllLoanTransactions/${phone}/${startDate}/${endDate}`,
       )
       .then((response) => {
         console.log(response.data);

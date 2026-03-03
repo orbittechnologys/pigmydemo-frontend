@@ -57,7 +57,7 @@ const Addcustomer = () => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post("https://orbitpay.uur.co.in:8443/customer/save", customervalue)
+      .post("https://orbitpay.uur.co.in/customer/save", customervalue)
       .then((response) => {
         console.log(response.data.data);
         const custId = response.data.data?.id;
@@ -84,7 +84,7 @@ const Addcustomer = () => {
 
   const getagentid = () => {
     axios
-      .get("https://orbitpay.uur.co.in:8443/agent/getAllAgents")
+      .get("https://orbitpay.uur.co.in/agent/getAllAgents")
       .then((response) => {
         console.log(response.data.data);
         setgetagentId(response.data.data);

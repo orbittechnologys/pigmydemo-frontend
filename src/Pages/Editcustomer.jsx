@@ -34,7 +34,7 @@ const Editcustomer = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://orbitpay.uur.co.in:8443/customer/id/${id}`)
+      .get(`https://orbitpay.uur.co.in/customer/id/${id}`)
       .then((result) => {
         console.log(result.data.data);
         seteditdata({ ...result.data.data });
@@ -205,7 +205,7 @@ const Editcustomer = () => {
     };
     console.log(data);
     axios
-      .put("https://orbitpay.uur.co.in:8443/customer/updateCustomer", data)
+      .put("https://orbitpay.uur.co.in/customer/updateCustomer", data)
       .then((response) => {
         console.log(response);
         alert("update successfully");
