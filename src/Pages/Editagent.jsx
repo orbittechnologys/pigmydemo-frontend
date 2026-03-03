@@ -33,7 +33,7 @@ const Editagent = () => {
 
   useEffect(() => {
     axios
-      .get(`https://pigmy.uur.co.in:8443/agent/id/${id}`)
+      .get(`https://orbitpay.uur.co.in:8443/agent/id/${id}`)
       .then((result) => {
         console.log(result.data.data);
         seteditdata({ ...result.data.data });
@@ -87,7 +87,7 @@ const Editagent = () => {
       const adharCardfileURL = await uploadToAzureStorage(
         aadharCardFile,
         folderName,
-        blobName
+        blobName,
       );
       seteditdata({ ...editdata, agentAadharCardImage: adharCardfileURL });
       alert("Aadhaar uploaded successfully.");
@@ -138,7 +138,7 @@ const Editagent = () => {
       const agentPanCardImage = await uploadToAzureStorage(
         panCardFile,
         folderName,
-        blobName
+        blobName,
       );
       console.log(agentPanCardImage);
       seteditdata({ ...editdata, agentPanCardImage: agentPanCardImage });
@@ -192,7 +192,7 @@ const Editagent = () => {
       const agentProfileImage = await uploadToAzureStorage(
         profileImageFile,
         folderName,
-        blobName
+        blobName,
       );
       console.log(agentProfileImage);
       seteditdata({ ...editdata, agentProfileImage: agentProfileImage });
@@ -260,7 +260,7 @@ const Editagent = () => {
     };
     console.log(data);
     axios
-      .put("https://pigmy.uur.co.in:8443/agent/updateAgent", data)
+      .put("https://orbitpay.uur.co.in:8443/agent/updateAgent", data)
       .then((response) => {
         console.log(response);
         alert("Update successfully");

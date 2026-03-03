@@ -63,7 +63,7 @@ const Customer = () => {
   const getAllCustomer = () => {
     axios
       .get(
-        `https://pigmy.uur.co.in:8443//customer/getAllCustomers/${currentpage}/${recordsperpages}/${field}`
+        `https://orbitpay.uur.co.in:8443//customer/getAllCustomers/${currentpage}/${recordsperpages}/${field}`,
       )
       .then((response) => {
         console.log(response.data.data.content);
@@ -81,7 +81,7 @@ const Customer = () => {
   //     setLoading(true);
 
   //     axios
-  //         .get(`https://pigmy.uur.co.in:8443/transaction/getCustomersWithNoTransactionsToday/${'Pigmy'}/${localdate}`)
+  //         .get(`https://orbitpay.uur.co.in:8443/transaction/getCustomersWithNoTransactionsToday/${'Pigmy'}/${localdate}`)
   //         .then((response) => {
   //             console.log(response.data);
   //             setpigmyResult(response.data);
@@ -104,7 +104,7 @@ const Customer = () => {
 
   const searchCustomers = () => {
     axios
-      .get(`https://pigmy.uur.co.in:8443/customer/query/${searchQuery}`)
+      .get(`https://orbitpay.uur.co.in:8443/customer/query/${searchQuery}`)
       .then((response) => {
         console.log(response.data);
         setSearchResults(response.data.data);
@@ -121,7 +121,7 @@ const Customer = () => {
     if (phone) {
       axios
         .get(
-          `https://pigmy.uur.co.in:8443/customer/findCustomerByPhoneNumber/${phone}`
+          `https://orbitpay.uur.co.in:8443/customer/findCustomerByPhoneNumber/${phone}`,
         )
         .then((response) => {
           console.log(response.data.data);
@@ -141,8 +141,8 @@ const Customer = () => {
   const downloadCsv = async () => {
     try {
       const res = await axios.get(
-        "https://pigmy.uur.co.in:8443/transaction/generateCsvForAllCustomers",
-        { responseType: "blob" }
+        "https://orbitpay.uur.co.in:8443/transaction/generateCsvForAllCustomers",
+        { responseType: "blob" },
       );
 
       const blob = new Blob([res.data], { type: "text/csv" });

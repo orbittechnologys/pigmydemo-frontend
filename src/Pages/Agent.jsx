@@ -22,7 +22,7 @@ const Agent = () => {
 
   const Allagent = () => {
     axios
-      .get("https://pigmy.uur.co.in:8443/agent/getAllAgents")
+      .get("https://orbitpay.uur.co.in:8443/agent/getAllAgents")
       .then((response) => {
         console.log(response.data.data);
         setAgent(response.data.data);
@@ -39,7 +39,7 @@ const Agent = () => {
 
   const handleSwitchChange = (agentId, status) => {
     const Id_status = status ? "offline" : "online";
-    const endpoint = `https://pigmy.uur.co.in:8443/agent/${Id_status}/${agentId}`;
+    const endpoint = `https://orbitpay.uur.co.in:8443/agent/${Id_status}/${agentId}`;
 
     axios
       .patch(endpoint)
@@ -49,8 +49,8 @@ const Agent = () => {
         // Update the local state with the new status
         setAgent((prevAgent) =>
           prevAgent.map((agent) =>
-            agent.id === agentId ? { ...agent, status: !status } : agent
-          )
+            agent.id === agentId ? { ...agent, status: !status } : agent,
+          ),
         );
       })
       .catch((error) => {
@@ -61,7 +61,7 @@ const Agent = () => {
   const searchCustomers = () => {
     axios
       .get(
-        `https://pigmy.uur.co.in:8443/agent/getAgentByIdOrAgentByName/${query}`
+        `https://orbitpay.uur.co.in:8443/agent/getAgentByIdOrAgentByName/${query}`,
       )
       .then((response) => {
         console.log(response.data.data);

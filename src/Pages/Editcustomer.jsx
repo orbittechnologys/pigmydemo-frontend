@@ -34,7 +34,7 @@ const Editcustomer = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://pigmy.uur.co.in:8443/customer/id/${id}`)
+      .get(`https://orbitpay.uur.co.in:8443/customer/id/${id}`)
       .then((result) => {
         console.log(result.data.data);
         seteditdata({ ...result.data.data });
@@ -117,7 +117,7 @@ const Editcustomer = () => {
       const adharCardfileURL = await uploadToAzureStorage(
         aadharCardFile,
         folderName,
-        blobName
+        blobName,
       );
       seteditdata({ ...editdata, customerAadharImage: adharCardfileURL });
       alert("Aadhaar uploaded successfully.");
@@ -171,7 +171,7 @@ const Editcustomer = () => {
       const customerProfilePic = await uploadToAzureStorage(
         profileImageFile,
         folderName,
-        blobName
+        blobName,
       );
       console.log(customerProfilePic);
       seteditdata({ ...editdata, customerProfilePic: customerProfilePic });
@@ -205,7 +205,7 @@ const Editcustomer = () => {
     };
     console.log(data);
     axios
-      .put("https://pigmy.uur.co.in:8443/customer/updateCustomer", data)
+      .put("https://orbitpay.uur.co.in:8443/customer/updateCustomer", data)
       .then((response) => {
         console.log(response);
         alert("update successfully");

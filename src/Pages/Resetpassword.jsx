@@ -15,8 +15,8 @@ const Resetpassword = () => {
     e.preventDefault();
     axios
       .post(
-        `https://pigmy.uur.co.in:8443/agent/password/verifyEmailBeforeUpdatePassword/${email}`,
-        email
+        `https://orbitpay.uur.co.in:8443/agent/password/verifyEmailBeforeUpdatePassword/${email}`,
+        email,
       )
       .then((respose) => {
         console.log(respose.data);

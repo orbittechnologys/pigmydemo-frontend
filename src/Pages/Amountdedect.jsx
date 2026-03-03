@@ -37,14 +37,14 @@ const Amountdedect = () => {
       console.log(data);
       // Use axios.put and pass data in the request body
       const response = await axios.put(
-        "https://pigmy.uur.co.in:8443/customer/withDrawalOfAmount",
+        "https://orbitpay.uur.co.in:8443/customer/withDrawalOfAmount",
         null,
         {
           params: {
             accountNumber: ddAccNo,
             withdrawAmount: amount,
           },
-        }
+        },
       );
       console.log(response.data); // Log the response if needed
       alert("withdrawal Success");
@@ -70,14 +70,14 @@ const Amountdedect = () => {
       console.log(data);
       // Use axios.put and pass data in the request body
       const response = await axios.put(
-        "https://pigmy.uur.co.in:8443/transaction/withdrawalOfAllAccountTypeAmount",
+        "https://orbitpay.uur.co.in:8443/transaction/withdrawalOfAllAccountTypeAmount",
         null,
         {
           params: {
             accountNumber: secAccNo,
             withdrawalAmount: allamount,
           },
-        }
+        },
       );
       console.log(response.data); // Log the response if needed
       alert("withdrawal Success");
@@ -104,7 +104,7 @@ const Amountdedect = () => {
   const getAllCustomer = () => {
     axios
       .get(
-        `https://pigmy.uur.co.in:8443/customer/findCustomerByPhoneNumber/${phone}`
+        `https://orbitpay.uur.co.in:8443/customer/findCustomerByPhoneNumber/${phone}`,
       )
       .then((response) => {
         console.log(response.data.data.customerAccount);
@@ -141,7 +141,7 @@ const Amountdedect = () => {
   const handleDDAccountSearch = async () => {
     try {
       const res = await axios.get(
-        `${BASE_URL}/accounts/app/fetchAccount/${ddAccNo}`
+        `${BASE_URL}/accounts/app/fetchAccount/${ddAccNo}`,
       );
       console.log(res.data);
       if (res.data.data.accountType != "DAILY_DEPOSIT") {
@@ -157,7 +157,7 @@ const Amountdedect = () => {
   const handleAccountSearch = async () => {
     try {
       const res = await axios.get(
-        `${BASE_URL}/accounts/app/fetchAccount/${secAccNo}`
+        `${BASE_URL}/accounts/app/fetchAccount/${secAccNo}`,
       );
       console.log(res.data);
       if (

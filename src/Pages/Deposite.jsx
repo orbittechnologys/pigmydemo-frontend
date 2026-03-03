@@ -30,7 +30,7 @@ const Deposite = () => {
 
   const Allagent = () => {
     axios
-      .get("https://pigmy.uur.co.in:8443/agent/getAllAgents")
+      .get("https://orbitpay.uur.co.in:8443/agent/getAllAgents")
       .then((response) => {
         console.log(response.data.data);
         setAgent(response.data.data);
@@ -48,7 +48,7 @@ const Deposite = () => {
 
   const AgentCustomer = () => {
     axios
-      .get("https://pigmy.uur.co.in:8443/agent/getCustomers", {
+      .get("https://orbitpay.uur.co.in:8443/agent/getCustomers", {
         params: {
           agentId: selectedAgentId,
         },
@@ -71,18 +71,18 @@ const Deposite = () => {
   const fetchAccountBalance = () => {
     // Find the customer whose name matches the selectedCustomer
     const customer = agentCustomer?.find(
-      (customer) => customer.id === selectedCustomer
+      (customer) => customer.id === selectedCustomer,
     );
 
     console.log("inside Customer", customer);
     // Find the account whose type matches the selectedtype
     const account = customer?.customerAccount?.filter(
-      (account) => account?.accountType === selectedtype
+      (account) => account?.accountType === selectedtype,
     );
     console.log("inside account", account);
 
     const accNumber = account?.find(
-      (number) => number.accountNumber === selectedAccNumber
+      (number) => number.accountNumber === selectedAccNumber,
     );
     console.log("Account Data", accNumber);
     // Set the balance of the selected account type
@@ -104,7 +104,7 @@ const Deposite = () => {
 
       // Use axios.put and pass data in the request body
       const response = await axios.put(
-        "https://pigmy.uur.co.in:8443/transaction/depositOfLoanAmount",
+        "https://orbitpay.uur.co.in:8443/transaction/depositOfLoanAmount",
         null,
         {
           params: {
@@ -113,7 +113,7 @@ const Deposite = () => {
             mode: mode,
             phone: phone,
           },
-        }
+        },
       );
       console.log(response.data); // Log the response if needed
       alert("Deposite Success");
@@ -139,7 +139,7 @@ const Deposite = () => {
       selectedAccNumber,
       amountAll,
       modeAll,
-      selectedCustomer
+      selectedCustomer,
     );
 
     setLoading(true);
@@ -147,7 +147,7 @@ const Deposite = () => {
     try {
       // Use axios.put and pass data in the request body
       const response = await axios.post(
-        "https://pigmy.uur.co.in:8443/transaction/newDepositAmount/v2",
+        "https://orbitpay.uur.co.in:8443/transaction/newDepositAmount/v2",
         null,
         {
           params: {
@@ -156,7 +156,7 @@ const Deposite = () => {
             depositAmount: amountAll,
             mode: modeAll,
           },
-        }
+        },
       );
       console.log(response.data); // Log the response if needed
       alert("Deposite Success");
@@ -184,7 +184,7 @@ const Deposite = () => {
   const getAllCustomer = () => {
     axios
       .get(
-        `https://pigmy.uur.co.in:8443/customer/findCustomerByPhoneNumber/${phoneAll}`
+        `https://orbitpay.uur.co.in:8443/customer/findCustomerByPhoneNumber/${phoneAll}`,
       )
       .then((response) => {
         console.log(response.data.data.customerAccount);
@@ -205,7 +205,7 @@ const Deposite = () => {
   const getAllCustomerAccountNumber = () => {
     axios
       .get(
-        `https://pigmy.uur.co.in:8443/customer/findCustomerByPhoneNumber/${phone}`
+        `https://orbitpay.uur.co.in:8443/customer/findCustomerByPhoneNumber/${phone}`,
       )
       .then((response) => {
         console.log(response.data.data.customerAccount);
@@ -416,7 +416,7 @@ const Deposite = () => {
                               <option key={index} value={accountType}>
                                 {accountType}
                               </option>
-                            )
+                            ),
                           );
                         })}
                   </select>
@@ -438,13 +438,13 @@ const Deposite = () => {
                         .map((customer) =>
                           customer.customerAccount
                             .filter(
-                              (account) => account.accountType === selectedtype
+                              (account) => account.accountType === selectedtype,
                             ) // Filter accounts by selected account type
                             .map((account, index) => (
                               <option key={index} value={account.accountNumber}>
                                 {account.accountNumber}
                               </option>
-                            ))
+                            )),
                         )}
                   </select>
                 </p>

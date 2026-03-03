@@ -18,11 +18,11 @@ const Adminotp = () => {
     e.preventDefault();
     axios
       .patch(
-        `https://pigmy.uur.co.in:8443/admin/password/forget/${uuid}/${newPassword}`,
+        `https://orbitpay.uur.co.in:8443/admin/password/forget/${uuid}/${newPassword}`,
         {
           uuid: uuid,
           newPassword: newPassword,
-        }
+        },
       )
       .then((response) => {
         console.log(response.data);

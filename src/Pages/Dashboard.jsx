@@ -54,7 +54,7 @@ const Dashboard = () => {
     setLoading(true);
 
     axios
-      .get("https://pigmy.uur.co.in:8443/transaction/findByAgentIdAndDate", {
+      .get("https://orbitpay.uur.co.in:8443/transaction/findByAgentIdAndDate", {
         params: {
           agentId: searchId,
           localDate: selectdate,
@@ -84,7 +84,7 @@ const Dashboard = () => {
 
     axios
       .get(
-        `https://pigmy.uur.co.in:8443/transaction/getCustomersWithNoTransactionsToday/${"DAILY_DEPOSIT"}/${localdate}`
+        `https://orbitpay.uur.co.in:8443/transaction/getCustomersWithNoTransactionsToday/${"DAILY_DEPOSIT"}/${localdate}`,
       )
       .then((response) => {
         console.log(response.data);
@@ -108,7 +108,7 @@ const Dashboard = () => {
   const GetAlltransaction = () => {
     axios
       .get(
-        `https://pigmy.uur.co.in:8443/transaction/getAllTransactions/${currentpage}/${recordsperpages}/${field}`
+        `https://orbitpay.uur.co.in:8443/transaction/getAllTransactions/${currentpage}/${recordsperpages}/${field}`,
       )
       .then((response) => {
         // console.log(response)
@@ -147,7 +147,7 @@ const Dashboard = () => {
         .toString()
         .padStart(2, "0")}-${endDate.getDate().toString().padStart(2, "0")}`;
       const response = await axios.get(
-        `https://pigmy.uur.co.in:8443/transaction/generateCsvForDailyDeposit/${sd}/${ed}`
+        `https://orbitpay.uur.co.in:8443/transaction/generateCsvForDailyDeposit/${sd}/${ed}`,
       );
 
       const csvData = response.data;
@@ -319,8 +319,9 @@ const Dashboard = () => {
                     {showRow
                       ? Pigmyresult.filter((val) =>
                           val.customerAccount.some(
-                            (account) => account.accountType === "DAILY_DEPOSIT"
-                          )
+                            (account) =>
+                              account.accountType === "DAILY_DEPOSIT",
+                          ),
                         ).map((val, index) => {
                           return (
                             <tr key={index}>
@@ -333,7 +334,7 @@ const Dashboard = () => {
                                 {
                                   val.customerAccount.find(
                                     (account) =>
-                                      account.accountType === "DAILY_DEPOSIT"
+                                      account.accountType === "DAILY_DEPOSIT",
                                   )?.accountNumber
                                 }
                               </td>

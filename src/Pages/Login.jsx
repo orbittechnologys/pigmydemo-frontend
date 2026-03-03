@@ -20,7 +20,7 @@ function Login() {
 
     axios
       .get(
-        `https://pigmy.uur.co.in:8443/admin/validate/email/${email}/${password}`
+        `https://orbitpay.uur.co.in:8443/admin/validate/email/${email}/${password}`,
       )
       .then((response) => {
         console.log(response.data.data);

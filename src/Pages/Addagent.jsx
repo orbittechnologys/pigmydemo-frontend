@@ -20,10 +20,10 @@ const Addagent = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [file, setFile] = useState(null);
   const [AdharCardfileURL, setFileUrlAdhar] = useState(
-    "https://cdn.icon-icons.com/icons2/3001/PNG/512/default_filetype_file_empty_document_icon_187718.png"
+    "https://cdn.icon-icons.com/icons2/3001/PNG/512/default_filetype_file_empty_document_icon_187718.png",
   );
   const [PanCardfileURL, setFileUrlPan] = useState(
-    "https://cdn.icon-icons.com/icons2/3001/PNG/512/default_filetype_file_empty_document_icon_187718.png"
+    "https://cdn.icon-icons.com/icons2/3001/PNG/512/default_filetype_file_empty_document_icon_187718.png",
   );
   const [ProfileImagesfileURL, setFileUrlProfile] = useState("User.jpg");
 
@@ -54,7 +54,7 @@ const Addagent = () => {
     console.log(data);
 
     axios
-      .post("https://pigmy.uur.co.in:8443/agent/save", data)
+      .post("https://orbitpay.uur.co.in:8443/agent/save", data)
       .then((response) => {
         console.log(response);
         alert("Thank you for Registration");
@@ -140,7 +140,7 @@ const Addagent = () => {
       const AdharCardUrl = await uploadToAzureStorage(
         file,
         folderName,
-        blobName
+        blobName,
       );
       setFileUrlAdhar(AdharCardUrl);
       alert("Aadhaar uploaded successfully.");

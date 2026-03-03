@@ -17,7 +17,7 @@ const AdminVerify = ({ setIsLoggedIn }) => {
     //console.log(formValues.username)
     e.preventDefault();
     axios
-      .get("https://pigmy.uur.co.in:8443/admin/otp", {
+      .get("https://orbitpay.uur.co.in:8443/admin/otp", {
         params: {
           otp: uuid,
         },

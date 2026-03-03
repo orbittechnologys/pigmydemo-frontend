@@ -22,7 +22,7 @@ const Alladmin = () => {
 
   const Allagent = () => {
     axios
-      .get("https://pigmy.uur.co.in:8443//admin/getAllAdmin")
+      .get("https://orbitpay.uur.co.in:8443//admin/getAllAdmin")
       .then((response) => {
         console.log(response.data.data);
         setAgent(response.data.data);
@@ -36,7 +36,7 @@ const Alladmin = () => {
 
   const searchCustomers = () => {
     axios
-      .get(`https://pigmy.uur.co.in:8443/admin/getAdminbyname/${userName}`)
+      .get(`https://orbitpay.uur.co.in:8443/admin/getAdminbyname/${userName}`)
       .then((response) => {
         console.log(response.data.data);
         setSearchResults(response.data.data); // Set the search results in state

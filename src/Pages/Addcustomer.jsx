@@ -21,10 +21,10 @@ const Addcustomer = () => {
   const [address, setaddress] = useState(null);
 
   const [AdharCardfileURL, setFileUrlAdhar] = useState(
-    "https://cdn.icon-icons.com/icons2/3001/PNG/512/default_filetype_file_empty_document_icon_187718.png"
+    "https://cdn.icon-icons.com/icons2/3001/PNG/512/default_filetype_file_empty_document_icon_187718.png",
   );
   const [ProfileImagesfileURL, setFileUrlProfile] = useState(
-    "https://cdn.icon-icons.com/icons2/3001/PNG/512/default_filetype_file_empty_document_icon_187718.png"
+    "https://cdn.icon-icons.com/icons2/3001/PNG/512/default_filetype_file_empty_document_icon_187718.png",
   );
   const [getagentId, setgetagentId] = useState([]);
   const [startDate, setStartDate] = useState(new Date());
@@ -57,7 +57,7 @@ const Addcustomer = () => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post("https://pigmy.uur.co.in:8443/customer/save", customervalue)
+      .post("https://orbitpay.uur.co.in:8443/customer/save", customervalue)
       .then((response) => {
         console.log(response.data.data);
         const custId = response.data.data?.id;
@@ -84,7 +84,7 @@ const Addcustomer = () => {
 
   const getagentid = () => {
     axios
-      .get("https://pigmy.uur.co.in:8443/agent/getAllAgents")
+      .get("https://orbitpay.uur.co.in:8443/agent/getAllAgents")
       .then((response) => {
         console.log(response.data.data);
         setgetagentId(response.data.data);
@@ -158,7 +158,7 @@ const Addcustomer = () => {
       const AdharCardfileURL = await uploadToAzureStorage(
         file,
         folderName,
-        blobName
+        blobName,
       );
       setFileUrlAdhar(AdharCardfileURL);
       alert("Aadhaar Card uploaded successfully.");

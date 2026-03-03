@@ -22,7 +22,7 @@ const ViewAccount = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://pigmy.uur.co.in:8443/customer/id/${id}`)
+      .get(`https://orbitpay.uur.co.in:8443/customer/id/${id}`)
       .then((result) => {
         console.log(result.data.data);
         setEditData(result.data.data);
@@ -42,7 +42,7 @@ const ViewAccount = () => {
         {
           accountNumber: accNo,
           id: updateAcc.id,
-        }
+        },
       );
       console.log(res.data);
       alert("Updated Successfully");

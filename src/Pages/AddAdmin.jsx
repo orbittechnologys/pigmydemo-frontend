@@ -37,7 +37,7 @@ const AddAdmin = () => {
     setLoading(true);
     e.preventDefault();
     axios
-      .post("https://pigmy.uur.co.in:8443/admin/save", data)
+      .post("https://orbitpay.uur.co.in:8443/admin/save", data)
       .then((response) => {
         console.log(response);
         alert("admin saved successfully");

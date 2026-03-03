@@ -38,7 +38,7 @@ const Adminedit = () => {
 
   useEffect(() => {
     axios
-      .get(`https://pigmy.uur.co.in:8443/admin/id/${id}`)
+      .get(`https://orbitpay.uur.co.in:8443/admin/id/${id}`)
       .then((result) => {
         console.log(result.data.data);
         seteditdata({ ...result.data.data });
@@ -94,7 +94,7 @@ const Adminedit = () => {
       const AdminProfileImage = await uploadToAzureStorage(
         profileImageFile,
         folderName,
-        blobName
+        blobName,
       );
       seteditdata({ ...editdata, adminProfilePic: AdminProfileImage });
       alert("Profileimage uploaded successfully.");
@@ -132,7 +132,7 @@ const Adminedit = () => {
     };
     console.log(data);
     axios
-      .put("https://pigmy.uur.co.in:8443/admin/updateAdmin", data)
+      .put("https://orbitpay.uur.co.in:8443/admin/updateAdmin", data)
       .then((response) => {
         console.log(response);
         alert("Update successfully");

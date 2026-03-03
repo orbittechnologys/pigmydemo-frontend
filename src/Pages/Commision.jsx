@@ -37,7 +37,7 @@ const Commission = () => {
     setLoading(true);
     axios
       .get(
-        `https://pigmy.uur.co.in:8443/commisssion/getAllCommission/${currentpage}/${recordsperpages}/${selectedvalue}`
+        `https://orbitpay.uur.co.in:8443/commisssion/getAllCommission/${currentpage}/${recordsperpages}/${selectedvalue}`,
       )
       .then((response) => {
         console.log(response);
@@ -54,12 +54,15 @@ const Commission = () => {
   const searchCustomers = () => {
     setLoading(true);
     axios
-      .get("https://pigmy.uur.co.in:8443/commisssion/findByCustomerIdAndDate", {
-        params: {
-          customerId: custid,
-          localDate: date,
+      .get(
+        "https://orbitpay.uur.co.in:8443/commisssion/findByCustomerIdAndDate",
+        {
+          params: {
+            customerId: custid,
+            localDate: date,
+          },
         },
-      })
+      )
       .then((response) => {
         setSearchResults(response.data.data);
         setLoading(false);
@@ -81,7 +84,7 @@ const Commission = () => {
     setLoading(true);
     if (searchAccNo) {
       axios
-        .get(`https://pigmy.uur.co.in:8443/commisssion/id/${searchAccNo}`)
+        .get(`https://orbitpay.uur.co.in:8443/commisssion/id/${searchAccNo}`)
         .then((response) => {
           setAccDetails(response.data.data);
           setLoading(false);
